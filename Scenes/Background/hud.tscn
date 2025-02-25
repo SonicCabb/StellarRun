@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm04nwv0nhhmd"]
+
+[ext_resource type="Script" path="res://Scenes/Background/hud.gd" id="1_ply7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq3p2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7ijt"]
+bg_color = Color(0.860034, 0, 0.136593, 1)
+
+[sub_resource type="Theme" id="Theme_juany"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_pq3p2")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_i7ijt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2r4e"]
+bg_color = Color(0.360784, 0.643137, 0.760784, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwwnm"]
+bg_color = Color(0.160827, 0.664776, 0.7829, 1)
+
+[sub_resource type="Theme" id="Theme_ckprw"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_t2r4e")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fwwnm")
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_ply7f")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 23.0
+offset_top = 1025.0
+offset_right = 320.0
+offset_bottom = 1062.0
+theme = SubResource("Theme_juany")
+value = 50.0
+show_percentage = false
+
+[node name="ShieldBar" type="ProgressBar" parent="."]
+offset_left = 23.0
+offset_top = 988.0
+offset_right = 320.0
+offset_bottom = 1025.0
+theme = SubResource("Theme_ckprw")
+value = 50.0
+show_percentage = false

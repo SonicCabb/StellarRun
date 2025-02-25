@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmpffv61xg53o"]
+
+[ext_resource type="PackedScene" uid="uid://b4v58jhg58cuk" path="res://Scenes/ship.tscn" id="1_fbov1"]
+[ext_resource type="Script" path="res://Scenes/background.gd" id="1_tmpha"]
+[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="5_8ckui"]
+
+[node name="BaseScene" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_tmpha")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -715.0
+offset_top = -714.0
+offset_right = 2454.0
+offset_bottom = 1234.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border" type="Node2D" parent="Background"]
+position = Vector2(-539, 762)
+scale = Vector2(26.4667, 1.97626)
+
+[node name="ColorRect" type="ColorRect" parent="Background/Border"]
+offset_left = 20.2896
+offset_top = 11.6381
+offset_right = 60.2896
+offset_bottom = 51.6381
+scale = Vector2(2.54644, 1.4437)
+
+[node name="ColorRect4" type="ColorRect" parent="Background/Border"]
+offset_left = 11.5617
+offset_top = -497.404
+offset_right = 51.5617
+offset_bottom = -457.404
+scale = Vector2(2.54644, 1.4437)
+
+[node name="ColorRect2" type="ColorRect" parent="Background/Border"]
+offset_left = 16.0
+offset_top = -440.0
+offset_right = 18.0
+offset_bottom = -123.0
+scale = Vector2(2.54644, 1.4437)
+
+[node name="ColorRect3" type="ColorRect" parent="Background/Border"]
+offset_left = 92.4556
+offset_top = -429.093
+offset_right = 94.4556
+offset_bottom = -112.093
+scale = Vector2(2.54644, 1.4437)
+
+[node name="Stars" type="Node2D" parent="Background"]
+
+[node name="Ship" parent="." instance=ExtResource("1_fbov1")]
+position = Vector2(583, 534)
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+scale = Vector2(-29.8443, -27.8036)
+offset = Vector2(0, -200)
+limit_left = 0
+limit_top = 200
+limit_right = 2000
+limit_bottom = 1000
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("5_8ckui")

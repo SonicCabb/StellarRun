@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b61u7j2lwpgbn"]
+
+[ext_resource type="Script" path="res://Scenes/Debris/asteroid.gd" id="1_i456n"]
+[ext_resource type="Texture2D" uid="uid://caxsuppaovm58" path="res://Graphics/Asteroids/Asteroid.png" id="1_kqkfe"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjfki"]
+
+[node name="Asteroid" type="RigidBody2D"]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 23
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_qjfki")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 50
+script = ExtResource("1_i456n")
+
+[node name="Asteroid Collision Mask" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-20, -4, -13, -5, -12, -8, -4, -20, 12, -20, 21, -14, 25, -7, 30, -2, 30, 10, 24, 17, 20, 24, 10, 26, -2, 28, -8, 26, -21, 15, -27, 8, -26, 0)
+
+[node name="AsteroidSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_kqkfe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

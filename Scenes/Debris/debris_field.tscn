@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://vhps4ftc04c3"]
+
+[ext_resource type="Script" path="res://Scenes/Debris/debris_field.gd" id="1_wi1f3"]
+[ext_resource type="Script" path="res://Scenes/Debris/asteroids.gd" id="2_soebg"]
+
+[node name="DebrisField" type="Node2D"]
+script = ExtResource("1_wi1f3")
+
+[node name="Asteroids" type="Node2D" parent="."]
+script = ExtResource("2_soebg")

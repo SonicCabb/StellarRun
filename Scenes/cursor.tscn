@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d2uwaplnrqb7m"]
+
+[node name="Cursor" type="Node2D"]
+
+[node name="Top" type="Polygon2D" parent="."]
+position = Vector2(0, -20)
+offset = Vector2(-1, -5)
+polygon = PackedVector2Array(-1, 15, 3, 15, 3, -5, -1, -5)
+
+[node name="Bottom" type="Polygon2D" parent="."]
+position = Vector2(0, 20)
+offset = Vector2(-1, -5)
+polygon = PackedVector2Array(-1, 15, 3, 15, 3, -5, -1, -5)
+
+[node name="Right" type="Polygon2D" parent="."]
+position = Vector2(20, 0)
+rotation = 1.5708
+offset = Vector2(-1, -5)
+polygon = PackedVector2Array(-1, 15, 3, 15, 3, -5, -1, -5)
+
+[node name="Left" type="Polygon2D" parent="."]
+position = Vector2(-20, 0)
+rotation = 1.5708
+offset = Vector2(-1, -5)
+polygon = PackedVector2Array(-1, 15, 3, 15, 3, -5, -1, -5)

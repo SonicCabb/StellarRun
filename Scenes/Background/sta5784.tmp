@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bda4v08flml0j"]
+
+[ext_resource type="Texture2D" uid="uid://v72s54dl4doq" path="res://Graphics/Stars/star.png" id="1_76dpv"]
+[ext_resource type="Script" path="res://Scenes/Background/star.gd" id="2_2fuvu"]
+
+[node name="Star" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_76dpv")
+script = ExtResource("2_2fuvu")
