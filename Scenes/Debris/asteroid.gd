@@ -6,9 +6,12 @@ const Y_VEL_MOD: float = .3
 
 var health: Tracker = Tracker.new()
 
+const LOOT_SCENE: PackedScene = preload("res://Scenes/Loot/loot_object.tscn")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	health.init(50, 50, 0)
+	health.init(50, 50, 0, 0, null)
 	
 	initPosition()
 	initVelocity()
@@ -18,12 +21,14 @@ func _process(_delta: float) -> void:
 	#delete if it goes too far
 	if position.y > Background.getPlayArea().y:
 		queue_free()
+		
 
 func takeDamage(damage: int):
 	
 	#reduce health by damage
 	if health.reduce(damage) >= 0: #if overflow is zero or more
 		queue_free()
+		LootField.dropLoot(LOOT_SCENE, position, linear_velocity.y, "ore", randi_range(0, 10))
 	#change textrues, base on current health p
 	var healthPer: float = health.getPercentage()
 	if healthPer < 1 && healthPer > .7:

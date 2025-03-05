@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmpffv61xg53o"]
+[gd_scene load_steps=10 format=3 uid="uid://cmpffv61xg53o"]
 
 [ext_resource type="Script" path="res://Scenes/base_scene.gd" id="1_1okam"]
 [ext_resource type="PackedScene" uid="uid://bwt1yw3631yuv" path="res://Scenes/Background/background.tscn" id="1_cuhho"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="6_rv82r"]
 [ext_resource type="PackedScene" uid="uid://d2uwaplnrqb7m" path="res://Scenes/cursor.tscn" id="7_ph5qt"]
 [ext_resource type="Script" path="res://Scenes/cursor.gd" id="8_rrsw2"]
-[ext_resource type="PackedScene" uid="uid://dy41pg22vc785" path="res://Scenes/loot_field.tscn" id="10_mq7ge"]
 
 [node name="BaseScene" type="Node2D"]
 script = ExtResource("1_1okam")
@@ -40,8 +39,6 @@ process_mode = 3
 visible = false
 position = Vector2(415, 364)
 script = ExtResource("8_rrsw2")
-
-[node name="LootField" parent="." instance=ExtResource("10_mq7ge")]
 
 [connection signal="updateHealth" from="Ship" to="Hud" method="_on_ship_update_health"]
 [connection signal="updateShield" from="Ship" to="Hud" method="_on_ship_update_shield"]

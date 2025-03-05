@@ -15,11 +15,19 @@ run/main_scene="res://Scenes/base_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [input]
 
@@ -66,6 +74,8 @@ Boost={
 2d_physics/layer_3="Debris"
 2d_physics/layer_4="Bounds"
 2d_physics/layer_5="EnergyProj"
+2d_physics/layer_6="Loot"
+2d_physics/layer_7="Tractor"
 
 [physics]
 

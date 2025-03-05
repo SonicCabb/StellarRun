@@ -2,7 +2,7 @@ extends Node2D
 class_name Asteroids
 
 const ASTEROID_SCENE: PackedScene = preload("res://Scenes/Debris/asteroid.tscn")
-var distanceForAsteroid: int = 100
+var distanceForAsteroid: int = 20
 var asteroidSpawn: DistanceSpawner = DistanceSpawner.new()
 
 const X_VEL_RANGE: int = 25

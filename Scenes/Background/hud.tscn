@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm04nwv0nhhmd"]
+[gd_scene load_steps=10 format=3 uid="uid://dm04nwv0nhhmd"]
 
 [ext_resource type="Script" path="res://Scenes/Background/hud.gd" id="1_ply7f"]
+[ext_resource type="Script" path="res://Scenes/Background/health_bar.gd" id="2_1yrop"]
+[ext_resource type="Script" path="res://Scenes/Background/shield_bar.gd" id="3_ie55s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq3p2"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -33,6 +35,7 @@ offset_bottom = 1062.0
 theme = SubResource("Theme_juany")
 value = 50.0
 show_percentage = false
+script = ExtResource("2_1yrop")
 
 [node name="ShieldBar" type="ProgressBar" parent="."]
 offset_left = 23.0
@@ -42,3 +45,4 @@ offset_bottom = 1025.0
 theme = SubResource("Theme_ckprw")
 value = 50.0
 show_percentage = false
+script = ExtResource("3_ie55s")
