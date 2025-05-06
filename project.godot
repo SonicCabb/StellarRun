@@ -8,16 +8,28 @@
 
 config_version=5
 
+[addons]
+
+resources_spreadsheet_view/array_color_tint=100.0
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+resources_spreadsheet_view/fold_docks=true
+resources_spreadsheet_view/resource_cell_label_mode=1
+resources_spreadsheet_view/freeze_first_column=true
+
 [application]
 
 config/name="Stellar Run"
-run/main_scene="res://Scenes/base_scene.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+run/main_scene="res://Scenes/Base/base_scene.tscn"
+config/features=PackedStringArray("4.4", "Mobile")
 
 [autoload]
 
-DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+GlobalStuff="*res://Scripts/Base/GlobalStuff.gd"
 
 [display]
 
@@ -27,7 +39,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/resource_databases/editor_only/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [input]
 

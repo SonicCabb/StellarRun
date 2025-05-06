@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xupepwkl3fdk"]
 
-[ext_resource type="Script" path="res://Scenes/Projectiles/plasma.gd" id="1_4fnri"]
+[ext_resource type="Script" uid="uid://dtpxf0gd2smbm" path="res://Scripts/Projectiles/plasma.gd" id="1_4fnri"]
 [ext_resource type="Texture2D" uid="uid://b285kg5kwod3x" path="res://Graphics/Projectiles/plasma.png" id="1_u3bqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68g62"]

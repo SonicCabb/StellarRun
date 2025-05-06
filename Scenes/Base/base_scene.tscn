@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmpffv61xg53o"]
+
+[ext_resource type="Script" uid="uid://dufyv6jripcjj" path="res://Scripts/Base/base_scene.gd" id="1_wv5l1"]
+[ext_resource type="PackedScene" uid="uid://bwt1yw3631yuv" path="res://Scenes/Background/background.tscn" id="2_bkfmm"]
+[ext_resource type="Script" uid="uid://b6aevb17oe7rf" path="res://Scripts/Projectiles/projectiles.gd" id="3_30w2y"]
+[ext_resource type="PackedScene" uid="uid://vhps4ftc04c3" path="res://Scenes/Debris/debris_field.tscn" id="4_0l1ig"]
+[ext_resource type="PackedScene" uid="uid://b4v58jhg58cuk" path="res://Scenes/Ship/ship.tscn" id="5_u823p"]
+[ext_resource type="Script" uid="uid://capgenvumadun" path="res://Scripts/Base/camera_2d.gd" id="6_cy8rh"]
+[ext_resource type="PackedScene" uid="uid://dm04nwv0nhhmd" path="res://Scenes/UI/hud.tscn" id="7_87k2t"]
+[ext_resource type="PackedScene" uid="uid://dy41pg22vc785" path="res://Scenes/Loot/loot_field.tscn" id="8_myfya"]
+
+[node name="BaseScene" type="Node2D"]
+script = ExtResource("1_wv5l1")
+
+[node name="Background" parent="." instance=ExtResource("2_bkfmm")]
+
+[node name="Projectiles" type="Node2D" parent="."]
+script = ExtResource("3_30w2y")
+
+[node name="DebrisField" parent="." instance=ExtResource("4_0l1ig")]
+
+[node name="Ship" parent="." instance=ExtResource("5_u823p")]
+position = Vector2(849, 954)
+
+[node name="ShipCam" type="Camera2D" parent="."]
+rotation = 3.14159
+scale = Vector2(29.8443, 27.8036)
+anchor_mode = 0
+process_callback = 0
+position_smoothing_enabled = true
+editor_draw_screen = false
+script = ExtResource("6_cy8rh")
+
+[node name="Hud" parent="." instance=ExtResource("7_87k2t")]
+
+[node name="LootField" parent="." instance=ExtResource("8_myfya")]
+
+[connection signal="updateHealth" from="Ship" to="Hud" method="_on_ship_update_health"]
+[connection signal="updateShield" from="Ship" to="Hud" method="_on_ship_update_shield"]

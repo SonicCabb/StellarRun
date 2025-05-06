@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b61u7j2lwpgbn"]
 
-[ext_resource type="Script" path="res://Scenes/Debris/asteroid.gd" id="1_i456n"]
+[ext_resource type="Script" uid="uid://cr6qhp6d674v7" path="res://Scripts/Debris/asteroid.gd" id="1_i456n"]
 [ext_resource type="Texture2D" uid="uid://caxsuppaovm58" path="res://Graphics/Asteroids/Asteroid.png" id="1_kqkfe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjfki"]

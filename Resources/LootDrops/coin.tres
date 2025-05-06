@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="lootDrop" load_steps=3 format=3 uid="uid://br0ykquwvx2cu"]
+
+[ext_resource type="Script" uid="uid://cxcoq4pydga3o" path="res://Scripts/Resource Templates/loot_template.gd" id="1_svo3b"]
+[ext_resource type="Texture2D" uid="uid://buf1w7j348y7h" path="res://Graphics/Loot/coin.png" id="2_3737b"]
+
+[resource]
+script = ExtResource("1_svo3b")
+texture = ExtResource("2_3737b")
+name = "coin"
+value = 1.0
+metadata/_custom_type_script = "uid://cxcoq4pydga3o"

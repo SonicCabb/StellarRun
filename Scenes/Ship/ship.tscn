@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4v58jhg58cuk"]
+
+[ext_resource type="Texture2D" uid="uid://bxw4ewd4tlmln" path="res://Graphics/Ships/Ship.png" id="1_d3hf6"]
+[ext_resource type="Script" uid="uid://bmhmynqm5a254" path="res://Scripts/Ship/ship.gd" id="1_nsoki"]
+[ext_resource type="Gradient" uid="uid://t54pidwwckr0" path="res://Resources/Visuals/Gradients/Flame.tres" id="2_ouh8a"]
+[ext_resource type="Script" uid="uid://rests4j6lkkg" path="res://Scenes/tractor_beam.gd" id="4_ioy21"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6wh5t"]
+gradient = ExtResource("2_ouh8a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_orof0"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(2, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 145.16
+initial_velocity_max = 198.92
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_6wh5t")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iaatp"]
+radius = 120.669
+
+[node name="Ship" type="CharacterBody2D"]
+collision_mask = 62
+motion_mode = 1
+script = ExtResource("1_nsoki")
+metadata/_edit_vertical_guides_ = [-1033.0, -1059.0]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(2, -29, 10, -6, 19, 1, 25, 1, 25, -11, 31, -8, 31, 27, 27, 30, 25, 23, 14, 11, 5, 14, 4, 21, -4, 22, -6, 13, -14, 12, -23, 19, -25, 29, -31, 27, -30, -7, -27, -11, -25, 1, -14, -2, -3, -29, 0, -32)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 101
+lifetime = 0.3
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_orof0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_d3hf6")
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Primary Gun" type="Marker2D" parent="."]
+position = Vector2(0, -29)
+
+[node name="PrimaryFireTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="TractorBeam" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("4_ioy21")
+
+[node name="TractorCollision" type="CollisionShape2D" parent="TractorBeam"]
+shape = SubResource("CircleShape2D_iaatp")
+
+[connection signal="area_entered" from="TractorBeam" to="." method="_on_tractor_beam_area_entered"]
+[connection signal="area_exited" from="TractorBeam" to="." method="_on_tractor_beam_area_exited"]

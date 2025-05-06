@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="lootDrop" load_steps=3 format=3 uid="uid://funw5jedf7ij"]
+
+[ext_resource type="Script" uid="uid://cxcoq4pydga3o" path="res://Scripts/Resource Templates/loot_template.gd" id="1_cwcil"]
+[ext_resource type="Texture2D" uid="uid://bphkkx7vq48ia" path="res://Graphics/Loot/crystal.png" id="2_y5hvj"]
+
+[resource]
+script = ExtResource("1_cwcil")
+texture = ExtResource("2_y5hvj")
+name = "crystal"
+value = 100.0
+metadata/_custom_type_script = "uid://cxcoq4pydga3o"

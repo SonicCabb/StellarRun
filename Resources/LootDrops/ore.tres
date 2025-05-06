@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="lootDrop" load_steps=3 format=3 uid="uid://bj2skejlsrvbs"]
+
+[ext_resource type="Script" uid="uid://cxcoq4pydga3o" path="res://Scripts/Resource Templates/loot_template.gd" id="1_grisd"]
+[ext_resource type="Texture2D" uid="uid://cykwcurp8c7ml" path="res://Graphics/Loot/ore.png" id="2_17qxo"]
+
+[resource]
+script = ExtResource("1_grisd")
+texture = ExtResource("2_17qxo")
+name = "ore"
+value = 10.0
+metadata/_custom_type_script = "uid://cxcoq4pydga3o"

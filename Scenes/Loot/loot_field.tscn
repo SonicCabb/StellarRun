@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy41pg22vc785"]
+
+[ext_resource type="Script" uid="uid://bpgmovvucomee" path="res://Scripts/Loot/loot_field.gd" id="1_xh2vu"]
+
+[node name="LootField" type="Node2D"]
+script = ExtResource("1_xh2vu")
